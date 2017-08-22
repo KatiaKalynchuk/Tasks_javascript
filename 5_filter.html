@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5_filter</title>
+</head>
+<body>
+<script>
+    const filter = (arr, callback, thisArg) => {
+
+        let length = arr.length, result = [];
+        for (let i = 0; i < length; i++) {
+            if(callback.call(thisArg, arr[i], i, arr)) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    };
+    console.log(filter([1, 2, 3, 4], n => n < 3));
+</script>
+</body>
+</html>
