@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1_debagging</title>
+</head>
+<body>
+<script>
+    //Необходимо, чтобы этот код выводил в лог hey amy, но он выводит hey arnold.
+    function greet(person) {
+        if (person.name == 'amy' ) { //было person == { name: 'amy' }
+            return 'hey amy'
+        } else {
+            return 'hey arnold'
+        }
+    }
+    console.log(greet({ name: 'amy' }));
+</script>
+</body>
+</html>
