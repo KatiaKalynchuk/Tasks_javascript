@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getSum</title>
+</head>
+<body>
+<script>
+    /*
+    написать функцию, которая будет принимать массив и возвращать результат,
+    равный сумме всех нечетых чисел, помноженных на 2 (например при передаче массива
+    [1, 2, 3, 4, 5, 6] она вернет 1*2 + 3*2 + 5*2 = 18). Массив не обязательно отсортирован
+    и может содержать повторы
+    */
+
+    const getSum = arr => {
+        let length = arr.length, sum = 0, i;
+        for(i = 0; i < length; i += 2){
+            sum += arr[i]*2;
+        }
+        return sum;
+    };
+
+    console.log(getSum([1, 2, 3, 4, 5, 6]));
+</script>
+</body>
+</html>
