@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3_uniq</title>
+</head>
+<body>
+<script>
+    const getUniq = arr => {
+        let uniq = arr.filter(getUniqItems);
+        function getUniqItems(item, i, arr){
+            return arr.indexOf(item) === i
+        };
+
+        return uniq;
+    };
+    console.log(getUniq([]));
+    console.log(getUniq([1, 4, 2, 2, 3, 4, 8]));
+</script>
+</body>
+</html>
