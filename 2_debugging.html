@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2_debugging</title>
+</head>
+<body>
+<script>
+    //Необходимо, чтобы этот код выводил в лог числа 0, 1, 2, 3 в указанном порядке, но он этого не делает.
+
+    // 1 способ
+    for (let i = 0; i < 4; i++) { // было var i = 0; i < 4; i++
+        setTimeout(() => console.log(i), 0)
+    }
+    // 2 способ
+    for (var i = 0; i < 4; i++) {
+        setTimeout((function(){
+            console.log(i)
+        })(i), 0)
+    }
+</script>
+</body>
+</html>
