@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9_isPalindrome</title>
+</head>
+<body>
+<script>
+    const isPalindrome = str => {
+        let strReverse = str.replace(/\s/g, '').toLowerCase().split('').reverse().join('');
+        if(strReverse === str){
+            return true
+        } else {
+            return false
+        }
+    };
+    console.log(isPalindrome(''));
+    console.log(isPalindrome('abcdcba'));
+    console.log(isPalindrome('abcd'));
+    console.log(isPalindrome('A man a plan a canal Panama'));
+
+</script>
+</body>
+</html>
