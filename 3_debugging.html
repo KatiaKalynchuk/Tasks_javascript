@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3_debugging</title>
+</head>
+<body>
+<script>
+    //Необходимо, чтобы этот код выводил в лог doggo, но он выводит лишь undefined.
+
+    let dog = {
+        name: 'doggo',
+        sayName() {
+            console.log(this.name)
+        }
+    };
+    dog.sayName(); // было let sayName = dog.sayName
+                   //      sayName()
+
+</script>
+</body>
+</html>
