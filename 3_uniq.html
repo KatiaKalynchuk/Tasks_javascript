@@ -7,11 +7,7 @@
 <body>
 <script>
     const getUniq = arr => {
-        let uniq = arr.filter(getUniqItems);
-        function getUniqItems(item, i, arr){
-            return arr.indexOf(item) === i
-        };
-
+        let uniq = arr.filter((item, i, arr) => arr.indexOf(item) === i);
         return uniq;
     };
     console.log(getUniq([]));
