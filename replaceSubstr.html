@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+         написать функцию, которая принимает 3 аргумента строки и заменяет все вхождения одной строки на другую
+         1 аргумент - исходная строка
+         2 аргумент - строка, совпадения с которой мы будем искать
+         3 аргумент - строка, на которую меняем
+         например:
+         передача ('foo foo foo bar', 'foo', 'lol') вернет нам 'lol lol lol bar'
+         передача ('aaa', 'a', 'c') вернет 'ccc'
+         */
+
+        function replaceSubStr (str, subStr, replecementStr) {
+            let copyStr = str;
+            let pos = 0;
+            let newStr = '';
+            debugger
+            while (true) {
+                let index = copyStr.indexOf(subStr, pos);
+                if(replaceSubstr == -1) break;
+
+                let start = copyStr.slice(0 , replaceSubstr);
+                let end = copyStr.slice(replaceSubstr + subStr.length);
+                
+                newStr = start + replecementStr + end;
+                copyStr = newStr;
+            
+                pos = replaceSubstr + 1;
+            } 
+             return newStr;
+        }
+
+        console.log( replaceSubStr('foo foo foo bar', 'foo', 'lol') );
+        console.log( replaceSubStr('aaa', 'a', 'c') );
+    </script>
+</body>
+</html>
