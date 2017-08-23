@@ -6,14 +6,14 @@
 </head>
 <body>
 <script>
+
     const isPalindrome = str => {
-        let strReverse = str.replace(/\s/g, '').toLowerCase().split('').reverse().join('');
-        if(strReverse === str){
-            return true
-        } else {
-            return false
-        }
+        let removeChar = str.replace(/[^A-Z0-9]/ig, '').toLowerCase();
+        let strReverse = removeChar.split('').reverse().join('');
+
+        return (removeChar === strReverse)
     };
+
     console.log(isPalindrome(''));
     console.log(isPalindrome('abcdcba'));
     console.log(isPalindrome('abcd'));
