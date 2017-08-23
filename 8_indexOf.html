@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8_indexOf</title>
+</head>
+<body>
+<script>
+    function indexOf(arr, n) {
+        for(var i = 0; i < arr.length; i++) {
+            if(arr[i] === n){
+                return i
+            }
+        }
+        return -1;
+    }
+
+    console.log(indexOf([1, 2, 3], 1));
+    console.log(indexOf([1, 2, 3], 4));
+</script>
+</body>
+</html>
