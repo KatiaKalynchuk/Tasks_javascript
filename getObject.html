@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getObject</title>
+</head>
+<body>
+<script>
+//    Написать функцию которая на вход принимает аргумент "a.b.c.d",
+//    а на выходе возвращает объект: { a: { b: { c: { d: null } } } }
+
+    function getObject(arg) {
+        let tokens = arg.split('.');
+        let last =  tokens[tokens.length-1];
+        tokens.pop();
+        tokens.push(last);
+        last = null;
+
+        return tokens.reduceRight((previous, current) => {
+            let obj = {};
+            obj[current] = previous;
+
+            return obj
+        }, last);
+    };
+
+    console.log(getObject('a.b.c.d'));
+
+</script>
+</body>
+</html>
