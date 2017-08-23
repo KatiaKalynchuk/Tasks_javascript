@@ -7,16 +7,13 @@
 <body>
 <script>
     const intersection = (arr1, arr2) => {
-        let result = [],
-            a1 = arr1.length,
-            a2 = arr2.length;
-        for (let i = 0; i < a1; i++){
-            for (let j = 0; j < a2; j++) {
-                if (arr1[i] == arr2[j]) {
-                    result.push(arr1[i])
-                }
+        let result = [];
+
+        arr1.forEach(el => {
+            if (arr2.indexOf(el) !== -1) {
+                result.push(el)
             }
-        }
+        });
         return result;
     };
 
