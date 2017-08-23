@@ -26,15 +26,15 @@
 
             while (true) {
                 let index = copyStr.indexOf(subStr, pos);
-                if(replaceSubstr == -1) break;
+                if(index == -1) break;
 
-                let start = copyStr.slice(0 , replaceSubstr);
-                let end = copyStr.slice(replaceSubstr + subStr.length);
+                let start = copyStr.slice(0 , index);
+                let end = copyStr.slice(index + subStr.length);
                 
                 newStr = start + replecementStr + end;
                 copyStr = newStr;
             
-                pos = replaceSubstr + 1;
+                pos = index + 1;
             } 
              return newStr;
         }
