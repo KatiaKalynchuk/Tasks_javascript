@@ -6,11 +6,11 @@
 </head>
 <body>
 <script>
-    const filter = (arr, callback, thisArg) => {
+    const filter = (arr, callback) => {
 
         let length = arr.length, result = [];
         for (let i = 0; i < length; i++) {
-            if(callback.call(thisArg, arr[i], i, arr)) {
+            if (callback(arr[i])) {
                 result.push(arr[i]);
             }
         }
