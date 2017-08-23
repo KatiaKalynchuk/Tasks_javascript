@@ -8,14 +8,23 @@
 <script>
     //Необходимо, чтобы этот код выводил в лог doggo, но он выводит лишь undefined.
 
+//    let dog = {
+//        name: 'doggo',
+//        sayName() {
+//            console.log(this.name)
+//        }
+//    };
+//    dog.sayName(); // было let sayName = dog.sayName
+                   //      sayName()
+
     let dog = {
         name: 'doggo',
         sayName() {
             console.log(this.name)
         }
     };
-    dog.sayName(); // было let sayName = dog.sayName
-                   //      sayName()
+    let sayName = dog.sayName;
+    sayName.apply(dog);
 
 </script>
 </body>
