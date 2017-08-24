@@ -13,17 +13,24 @@
     и может содержать повторы
     */
 
+//    const getSum = arr => {
+//        let length = arr.length, sum = 0, i;
+//        for (i = 0; i < length; i++) {
+//            if (arr[i] % 2 !== 0) {
+//                sum += arr[i]*2;
+//            }
+//        }
+//        return sum;
+//    };
+
     const getSum = arr => {
-        let length = arr.length, sum = 0, i;
-        for (i = 0; i < length; i++) {
-            if (arr[i] % 2 !== 0) {
-                sum += arr[i]*2;
-            }
-        }
-        return sum;
+        return arr.filter((val) => val % 2 !== 0)
+            .map((val) => val * 2)
+            .reduce((a, b) => a + b);
     };
 
     console.log(getSum([1, 2, 3, 4, 5, 6]));
+
 </script>
 </body>
 </html>
