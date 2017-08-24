@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>findAnagrams</title>
+</head>
+<body>
+<script>
+
+    let input = [
+        "вертикаль",
+        "кильватер",
+        "апельсин",
+        "спаниель",
+        "австралопитек",
+        "ватерполистка",
+        "кластер",
+        "сталкер",
+        "стрелка"
+    ];
+
+    const findAnagrams = (array) => {
+        let obj = {};
+        let arrResult = [];
+
+        array.forEach( el => {
+            let strSort = el.toLowerCase().split('').sort().join('');
+
+            if(obj[strSort] === undefined) {
+                obj[strSort] = [];
+            }
+            obj[strSort].push(el);
+        });
+
+        for(let key in obj) {
+            if(obj[key].length > 1 ) {
+                arrResult.push(obj[key])
+            }
+        }
+        return arrResult;
+    };
+
+    console.log(findAnagrams(input));
+</script>
+</body>
+</html>
