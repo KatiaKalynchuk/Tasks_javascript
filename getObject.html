@@ -12,8 +12,6 @@
     function getObject(arg) {
         let tokens = arg.split('.');
         let last =  tokens[tokens.length-1];
-        tokens.pop();
-        tokens.push(last);
         last = null;
 
         return tokens.reduceRight((previous, current) => {
