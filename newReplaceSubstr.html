@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>newReplaceSubstr</title>
+</head>
+<body>
+<script>
+
+    String.prototype.replaceSubStr = function(subStr, replecementStr) {
+        let copyStr = this;
+        let pos = 0;
+        let newStr = '';
+
+        while (true) {
+            let index = copyStr.indexOf(subStr, pos);
+            if(index == -1) break;
+
+            let start = copyStr.slice(0 , index);
+            let end = copyStr.slice(index + subStr.length);
+
+            newStr = start + replecementStr + end;
+            copyStr = newStr;
+
+            pos = index + 1;
+        }
+        return newStr;
+    };
+
+    console.log('foo foo foo bar'.replaceSubStr('foo', 'lol') );
+    console.log('aaa'.replaceSubStr('a', 'c') );
+</script>
+</body>
+</html>
