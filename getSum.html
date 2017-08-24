@@ -16,7 +16,7 @@
     const getSum = arr => {
         let length = arr.length, sum = 0, i;
         for (i = 0; i < length; i++) {
-            if (arr[i] % 2 === 0) {
+            if (arr[i] % 2 !== 0) {
                 sum += arr[i]*2;
             }
         }
