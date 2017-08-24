@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doubleAndSumOddNumbers</title>
+</head>
+<body>
+<script>
+
+    Array.prototype.doubleAndSumOddNumbers = function() {
+        let length = this.length, sum = 0, i;
+        for (i = 0; i < length; i++) {
+            if (this[i] % 2 !== 0) {
+                sum += this[i]*2;
+            }
+        }
+        return sum;
+    };
+
+    console.log([1,2,3,4,5,6].doubleAndSumOddNumbers());
+</script>
+</body>
+</html>
