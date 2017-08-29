@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transpose matrix</title>
+</head>
+<body>
+<script>
+
+    const matrix = [
+        [1,1,1],
+        [2,2,2],
+        [3,3,3]
+    ];
+    const getTransposeMatrix = (matrix) => {
+        return matrix[0].map(function(col, i) {
+            return matrix.map(function(row) {
+                return row[i]
+            })
+        });
+    };
+
+console.log(getTransposeMatrix(matrix));
+
+</script>
+</body>
+</html>
