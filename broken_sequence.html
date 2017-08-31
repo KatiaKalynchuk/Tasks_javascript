@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Broken sequence</title>
+</head>
+<body>
+<script>
+//    Test.assertEquals(findMissingNumber("1 2 3 5"),4,"It must work for missing middle terms")
+//    Test.assertEquals(findMissingNumber("1 3"),2,"It must work for missing middle terms")
+//    Test.assertEquals(findMissingNumber("1 5"),2,"It must work for missing more than one number")
+//    Test.assertEquals(findMissingNumber(""), 0,"It must return 0 for an empty sequence")
+//    Test.assertEquals(findMissingNumber("1 2 3 4 5"),0,"It must return 0 if no number is missing")
+//    Test.assertEquals(findMissingNumber("2 3 4 5"),1,"It must return 1 for a sequence missing the first element")
+//    Test.assertEquals(findMissingNumber("2 6 4 5 3"),1,"It must work for a shuffled input")
+//    Test.assertEquals(findMissingNumber("2 1 4 3 a"),1,"It must return 1 for an invalid sequence")
+
+function findMissingNumber(sequence){
+    if (!sequence.length) return 0;
+
+    let strTrim = sequence.replace(/\s*/g, '');
+
+    if(!Number(strTrim)) return 1;
+
+    let row = sequence.split(' ').sort((a,b) => a-b),
+        arr = [],
+        j = 1;
+
+    for(let i = 0; i < row.length; i++) {
+
+        if(row[i] == j) {
+            j++;
+            continue;
+        }
+        arr.push(j);
+        j++;
+    }
+
+    return arr.length ? arr[0] : 0;
+}
+
+console.log(findMissingNumber("1 2 3"));
+console.log(findMissingNumber("1 3"));
+console.log(findMissingNumber("1 5"));
+console.log(findMissingNumber("2 3 4 5"));
+console.log(findMissingNumber(""));
+console.log(findMissingNumber("2 3 4 5 a"));
+</script>
+</body>
+</html>
