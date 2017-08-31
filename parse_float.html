@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parse float</title>
+</head>
+<body>
+<script>
+    function parseF(s) {
+        var num = +s;
+        if (!isNaN(num) && typeof num === 'number') {
+            return num
+        } else {
+            return null
+        }
+    }
+    console.log(parseF('1'));
+    console.log(parseF('2.5'));
+    console.log(parseF('1a'));
+    console.log(parseF('-21'));
+</script>
+</body>
+</html>
